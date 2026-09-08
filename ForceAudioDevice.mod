@@ -1,5 +1,5 @@
 return {
-    version = "1.3.1",
+    version = "1.0.0",
     run = function()
         fassert(rawget(_G, "new_mod"), "`ForceAudioDevice` failed loading DMF.")
 
