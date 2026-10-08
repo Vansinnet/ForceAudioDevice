@@ -1,3 +1,4 @@
+---@class ForceAudioDeviceMod: DMFMod
 local mod = get_mod("ForceAudioDevice")
 
 local DEVICE_NAME_SETTING = "device_name"
