@@ -1,3 +1,4 @@
+---@class ForceAudioDeviceMod
 local mod = get_mod("ForceAudioDevice")
 
 local device_options = {
