@@ -40,7 +40,7 @@ local function apply_audio_device(show_feedback, startup)
 
     if target_name == "" then
         if show_feedback and not startup then
-            mod:echo_localized("device_unchanged")
+            mod:echo("%s", mod:localize("device_unchanged"))
         end
 
         return
@@ -66,7 +66,7 @@ local function apply_audio_device(show_feedback, startup)
         warned_device_name = nil
 
         if show_feedback and (not startup or device_changed == true) then
-            mod:echo_localized(startup and "startup_device_default_applied" or "device_default_applied")
+            mod:echo("%s", mod:localize(startup and "startup_device_default_applied" or "device_default_applied"))
         end
 
         return
@@ -82,7 +82,7 @@ local function apply_audio_device(show_feedback, startup)
                 warned_device_name = nil
 
                 if show_feedback and (not startup or device_changed == true) then
-                    mod:echo_localized(startup and "startup_device_applied" or "device_applied", target_name)
+                    mod:echo("%s", mod:localize(startup and "startup_device_applied" or "device_applied", target_name))
                 end
 
                 return
@@ -94,7 +94,7 @@ local function apply_audio_device(show_feedback, startup)
     local device_changed = sync_game_setting(0)
 
     if show_feedback and (not startup or device_changed == true) then
-        mod:echo_localized(startup and "startup_device_missing" or "device_missing", target_name)
+        mod:echo("%s", mod:localize(startup and "startup_device_missing" or "device_missing", target_name))
         warned_device_name = target_name
     elseif warned_device_name ~= target_name then
         mod:warning("ForceAudioDevice: '%s' was not found; using the system default device.", target_name)
